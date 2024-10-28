@@ -1,6 +1,15 @@
-async function getApi() {
+const locationForm = document.querySelector("#location-form");
+const searchBoxLocation = document.querySelector("#search-box");
+
+locationForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const Usersearch = searchBoxLocation.value;
+  getApi(Usersearch);
+});
+
+async function getApi(location) {
   const response = await fetch(
-    `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/vancouver?unitGroup=metric&key=NVTJGNSGWVFDM7AKGC93LFYCH&contentType=json`,
+    `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?unitGroup=metric&key=NVTJGNSGWVFDM7AKGC93LFYCH&contentType=json`,
     {
       mode: "cors",
     }
@@ -31,5 +40,3 @@ async function getApi() {
       console.log(error, "error");
     });
 }
-
-getApi();
