@@ -16,9 +16,8 @@ async function getApi() {
       rainProbality = response.days[0].precipprob;
       humidity = response.days[0].humidity;
       windSpeed = response.days[0].windspeed;
-
       console.log(
-        "results",
+        "results:",
         resolvedAddress,
         tempature,
         maxTempature,
