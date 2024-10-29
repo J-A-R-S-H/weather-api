@@ -58,9 +58,23 @@ start of css
 body { 
     background-color: var(--background-color)
     ;   
-}
+padding: 0 1rem ;
+font-family: Verdana, Geneva, Tahoma, sans-serif;}
 
 #search-box {
+    border-width: 0;
     color: gray;
     background-color: var(--background--button);
+    border-radius: 0.5rem;
+padding: 1.1rem 1.3rem;
+width: 100%;
 }
+
+.dashboard {
+margin-top: 2rem;}
+
+#search-icon {
+    border-radius: 0.5rem;
+    padding: 1rem 0.5rem;
+}
+
