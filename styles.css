@@ -53,6 +53,7 @@ start of css
 :root {
     --background-color:#14130f;
     --background--button: #1e1e29;
+    --background--color--box: rgb(55 126 162);
 }
 
 body { 
@@ -78,3 +79,16 @@ margin-top: 2rem;}
     padding: 1rem 0.5rem;
 }
 
+.search-section {
+    display: flex;
+    gap: 1rem;
+}
+
+.display-info{
+    margin-top: 1rem;
+    background-color: var(--background--color--box);
+    color: #fafafa;
+    border-radius: 0.5rem;
+padding: 1rem;
+height: 20rem;
+}

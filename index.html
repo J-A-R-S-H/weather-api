@@ -8,12 +8,21 @@
     <script defer src="script.js"></script>
   </head>
   <body>
-    <div class="dashboard"></div>
-    <div class="search-section">
-    <form action="" method="get" id="location-form">
-      <input type="submit" value="search" id="search-icon" />
-      <input type="text" id="search-box" />
+    <div class="dashboard">
+      <form action="" method="get" id="location-form" class="search-section">
+        <input type="submit" value="search" id="search-icon" />
+        <input type="text" id="search-box" />
+      </form>
+
+      <section class="display-info">
+        <div class="location-info">
+          <div class="left-section">
+            <p>Vancouver British Columbia</p>
+            <time>Monday, October 28, 2024</time>
+          </div>
+          <div class="right-section">17:13</div>
+        </div>
+      </section>
     </div>
-    </form>
   </body>
 </html>
