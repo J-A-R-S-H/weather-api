@@ -92,3 +92,20 @@ margin-top: 2rem;}
 padding: 1rem;
 height: 20rem;
 }
+
+.address {
+    font-weight: 700;
+}
+
+.right-section p {
+    font-weight: 700;
+}
+
+time {
+    color: lightgray;
+}
+
+.location-info {
+    display: flex;
+    justify-content: space-between;
+}
