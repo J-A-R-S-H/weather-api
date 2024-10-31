@@ -51,9 +51,10 @@ start of css
 */
 
 :root {
-    --background-color:#14130f;
+    --background-color: rgb(19, 19, 25);
     --background--button: #1e1e29;
     --background--color--box: rgb(55 126 162);
+    --background-wrapper:rgb(25, 25, 30)
 }
 
 body { 
@@ -73,12 +74,18 @@ width: 100%;
 }
 
 .dashboard {
-margin-top: 2rem;}
+margin-top: 2rem;
+background-color: var(--background-wrapper);
+padding: 1rem;
+border-radius: 0.5rem;}
 
 #search-icon {
     border-radius: 0.5rem;
+    border: none;
     padding: 1rem 0.5rem;
+    background-color: var(--background--button);    
 }
+#search-icon svg {fill: rgb(151, 177, 240);}
 
 .search-section {
     display: flex;
