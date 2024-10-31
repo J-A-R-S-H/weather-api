@@ -152,9 +152,7 @@ margin-top: 0.5rem;
     padding: 0.8rem;
     border-radius: 0.5rem;}
 
-    .list-weather-overview {
-        
-    }
+
 
     .list-weather-overview li {
         display: flex;
@@ -168,8 +166,12 @@ margin-top: 0.5rem;
     }
 
     .list-weather-overview li span:not(:first-child){
-font-weight: bold;    }
-    .list-weather-overview li span {display: flex;}
+font-weight: bold;   
+ }
+    .list-weather-overview li span {
+        display: flex;
+    margin-top:  1rem;
+margin-bottom: 1rem;}
 
     .list-weather-overview li span svg {
         fill: lightgray;

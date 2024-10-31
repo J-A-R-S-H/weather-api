@@ -25,6 +25,8 @@ async function getApi(location) {
       rainProbality = response.days[0].precipprob;
       humidity = response.days[0].humidity;
       windSpeed = response.days[0].windspeed;
+      DateOf = response.days[0].datetime;
+
       console.log(
         "results:",
         resolvedAddress,
@@ -33,10 +35,51 @@ async function getApi(location) {
         minTempature,
         rainProbality,
         humidity,
-        windSpeed
+        windSpeed,
+        DateOf
+      );
+
+      renderAPi(
+        resolvedAddress,
+        tempature,
+        maxTempature,
+        minTempature,
+        rainProbality,
+        humidity,
+        windSpeed,
+        DateOf
       );
     })
     .catch(function (error) {
       console.log(error, "error");
     });
+}
+
+function renderAPi(
+  resolvedAddress,
+  tempature,
+  maxTempature,
+  minTempature,
+  rainProbality,
+  humidity,
+  windSpeed,
+  DateOf
+) {
+  const LocationAdressDom = document.querySelector(".address");
+  const DateDom = document.querySelector("time");
+
+  let reformedDate = formatDate(DateOf);
+
+  LocationAdressDom.textContent = resolvedAddress;
+  DateDom.textContent = reformedDate;
+}
+
+function formatDate(dateStr) {
+  const options = {
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  };
+  return new Date(dateStr).toLocaleDateString("en-US", options);
 }
