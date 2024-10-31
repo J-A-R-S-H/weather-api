@@ -57,8 +57,9 @@ start of css
 }
 
 body { 
-    background-color: var(--background-color)
-    ;   
+    background-color: var(--background-color);
+    max-width: 750px; /* Set a max width for larger screens */
+    margin: 0 auto; /* Center the body */   
 padding: 0 1rem ;
 font-family: Verdana, Geneva, Tahoma, sans-serif;}
 
@@ -122,4 +123,11 @@ time {
 
 .tempature {
     font-size: 2.6rem;
+}
+
+
+@media (min-width: 750px) {
+    body {
+        padding: 0 2rem; /* Increase padding on larger screens */
+    }
 }
