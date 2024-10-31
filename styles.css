@@ -62,7 +62,9 @@ body {
     max-width: 750px; /* Set a max width for larger screens */
     margin: 0 auto; /* Center the body */   
 padding: 0 1rem ;
-font-family: Verdana, Geneva, Tahoma, sans-serif;}
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+color: white;
+    }
 
 #search-box {
     border-width: 0;
@@ -76,7 +78,7 @@ width: 100%;
 .dashboard {
 margin-top: 2rem;
 background-color: var(--background-wrapper);
-padding: 1rem;
+padding: 0.8rem;
 border-radius: 0.5rem;}
 
 #search-icon {
@@ -131,6 +133,7 @@ time {
 .tempature {
     font-size: 2.6rem;
 }
+
 
 
 @media (min-width: 750px) {
