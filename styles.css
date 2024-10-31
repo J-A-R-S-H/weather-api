@@ -45,6 +45,17 @@
   #root, #__next {
     isolation: isolate;
   }
+  
+  /* remove default styles for ul and li */
+
+  ul {
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+  }
+  li {
+    list-style-type: none;
+  }
 
 /* 
 start of css
@@ -79,7 +90,8 @@ width: 100%;
 margin-top: 2rem;
 background-color: var(--background-wrapper);
 padding: 0.8rem;
-border-radius: 0.5rem;}
+border-radius: 0.5rem;
+}
 
 #search-icon {
     border-radius: 0.5rem;
@@ -134,8 +146,35 @@ time {
     font-size: 2.6rem;
 }
 
+.weather-overview {
+margin-top: 0.5rem;
+    background-color: var(--background-wrapper);
+    padding: 0.8rem;
+    border-radius: 0.5rem;}
 
+    .list-weather-overview {
+        
+    }
 
+    .list-weather-overview li {
+        display: flex;
+        justify-content: space-between;
+    }
+    .list-weather-overview li:not(:first-child){
+        border-top: 0.5px solid gray;
+    }
+    .list-weather-overview li span:first-child{
+        color: lightgray;
+    }
+
+    .list-weather-overview li span:not(:first-child){
+font-weight: bold;    }
+    .list-weather-overview li span {display: flex;}
+
+    .list-weather-overview li span svg {
+        fill: lightgray;
+        margin-right: 0.2rem;
+    }
 @media (min-width: 750px) {
     body {
         padding: 0 2rem; /* Increase padding on larger screens */
