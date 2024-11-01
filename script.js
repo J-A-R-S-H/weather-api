@@ -72,6 +72,7 @@ function renderAPi(
   const locationAdressDom = document.querySelector(".address");
   const dateDom = document.querySelector("time");
   const epochTimeDom = document.querySelector("#epoch-time");
+  const currentTempatureDom = document.querySelector("#current-temp");
 
   let reformedDate = formatDate(dateOf);
   let reformedEpochDate = convertEpochTo24Hour(epochTime);
@@ -79,6 +80,7 @@ function renderAPi(
   locationAdressDom.textContent = resolvedAddress;
   dateDom.textContent = reformedDate;
   epochTimeDom.textContent = reformedEpochDate;
+  currentTempatureDom.textContent = `${tempature}°c`;
 }
 
 function formatDate(dateStr) {
