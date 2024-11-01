@@ -78,6 +78,9 @@ function renderAPi(
   const currentTempatureDom = document.querySelector("#current-temp");
   const minmaxTempatureDom = document.querySelector(".minmax-tempature");
   const currentConditionsDom = document.querySelector("#current-conditions");
+  const rainPercentageDom = document.querySelector("#rain-percentage");
+  const windSpeedDom = document.querySelector("#wind-speed");
+  const humidityDom = document.querySelector("#humidity");
 
   let reformedDate = formatDate(dateOf);
   let reformedEpochDate = convertEpochTo24Hour(epochTime);
