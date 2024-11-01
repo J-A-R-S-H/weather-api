@@ -38,7 +38,8 @@ async function getApi(location) {
         humidity,
         windSpeed,
         dateOf,
-        epochTime
+        epochTime,
+        weatherConditions
       );
 
       renderAPi(
@@ -50,7 +51,8 @@ async function getApi(location) {
         humidity,
         windSpeed,
         dateOf,
-        epochTime
+        epochTime,
+        weatherConditions
       );
     })
     .catch(function (error) {
@@ -67,13 +69,15 @@ function renderAPi(
   humidity,
   windSpeed,
   dateOf,
-  epochTime
+  epochTime,
+  weatherConditions
 ) {
   const locationAdressDom = document.querySelector(".address");
   const dateDom = document.querySelector("time");
   const epochTimeDom = document.querySelector("#epoch-time");
   const currentTempatureDom = document.querySelector("#current-temp");
   const minmaxTempatureDom = document.querySelector(".minmax-tempature");
+  const currentConditionsDom = document.querySelector("#current-conditions");
 
   let reformedDate = formatDate(dateOf);
   let reformedEpochDate = convertEpochTo24Hour(epochTime);
@@ -83,6 +87,7 @@ function renderAPi(
   epochTimeDom.textContent = reformedEpochDate;
   currentTempatureDom.textContent = `${tempature}°c`;
   minmaxTempatureDom.textContent = `${minTempature}°c / ${maxTempature}°c`;
+  currentConditionsDom.textContent = weatherConditions;
 }
 
 function formatDate(dateStr) {
