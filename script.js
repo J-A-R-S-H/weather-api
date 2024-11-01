@@ -19,15 +19,15 @@ async function getApi(location) {
     .then(function (response) {
       console.log(response, "response");
       resolvedAddress = response.resolvedAddress;
-      tempature = response.days[0].temp;
-      maxTempature = response.days[0].tempmax;
-      minTempature = response.days[0].tempmin;
-      rainProbality = response.days[0].precipprob;
-      humidity = response.days[0].humidity;
-      windSpeed = response.days[0].windspeed;
+      tempature = response.currentConditions.temp;
+      maxTempature = response.currentConditions.tempmax;
+      minTempature = response.currentConditions.tempmin;
+      rainProbality = response.currentConditions.precipprob;
+      humidity = response.currentConditions.humidity;
+      windSpeed = response.currentConditions.windspeed;
       dateOf = response.days[0].datetime;
-      epochTime = response.days[0].datetimeEpoch;
-      weatherConditions = response.days[0].conditions;
+      epochTime = response.currentConditions.datetimeEpoch;
+      weatherConditions = response.currentConditions.conditions;
       console.log(
         "results:",
         resolvedAddress,
@@ -69,13 +69,16 @@ function renderAPi(
   dateOf,
   epochTime
 ) {
-  const LocationAdressDom = document.querySelector(".address");
-  const DateDom = document.querySelector("time");
+  const locationAdressDom = document.querySelector(".address");
+  const dateDom = document.querySelector("time");
+  const epochTimeDom = document.querySelector("#epoch-time");
 
-  let reformedDate = formatDate(DateOf);
+  let reformedDate = formatDate(dateOf);
+  let reformedEpochDate = convertEpochTo24Hour(epochTime);
 
-  LocationAdressDom.textContent = resolvedAddress;
-  DateDom.textContent = reformedDate;
+  locationAdressDom.textContent = resolvedAddress;
+  dateDom.textContent = reformedDate;
+  epochTimeDom.textContent = reformedEpochDate;
 }
 
 function formatDate(dateStr) {
@@ -88,11 +91,15 @@ function formatDate(dateStr) {
   return new Date(dateStr).toLocaleDateString("en-US", options);
 }
 
-function convertEpochTo24Hour(epoch) {
+function convertEpochTo24Hour(epoch, useUTC = false) {
   const date = new Date(epoch * 1000);
 
-  const hours = String(date.getHours()).padStart(2, "0");
-  const minutes = String(date.getMinutes()).padStart(2, "0");
+  const hours = useUTC
+    ? String(date.getUTCHours()).padStart(2, "0")
+    : String(date.getHours()).padStart(2, "0");
+  const minutes = useUTC
+    ? String(date.getUTCMinutes()).padStart(2, "0")
+    : String(date.getMinutes()).padStart(2, "0");
 
   return `${hours}:${minutes}`;
 }
