@@ -91,6 +91,9 @@ function renderAPi(
   currentTempatureDom.textContent = `${tempature}°c`;
   minmaxTempatureDom.textContent = `${minTempature}°c / ${maxTempature}°c`;
   currentConditionsDom.textContent = weatherConditions;
+  rainPercentageDom.textContent = rainProbality;
+  windSpeedDom.textContent = windSpeed;
+  humidityDom.textContent = humidity;
 }
 
 function formatDate(dateStr) {
