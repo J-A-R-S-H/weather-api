@@ -20,8 +20,8 @@ async function getApi(location) {
       console.log(response, "response");
       resolvedAddress = response.resolvedAddress;
       tempature = response.currentConditions.temp;
-      maxTempature = response.currentConditions.tempmax;
-      minTempature = response.currentConditions.tempmin;
+      maxTempature = response.days[0].tempmax;
+      minTempature = response.days[0].tempmin;
       rainProbality = response.currentConditions.precipprob;
       humidity = response.currentConditions.humidity;
       windSpeed = response.currentConditions.windspeed;
