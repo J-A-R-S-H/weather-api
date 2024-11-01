@@ -25,8 +25,9 @@ async function getApi(location) {
       rainProbality = response.days[0].precipprob;
       humidity = response.days[0].humidity;
       windSpeed = response.days[0].windspeed;
-      DateOf = response.days[0].datetime;
-
+      dateOf = response.days[0].datetime;
+      epochTime = response.days[0].datetimeEpoch;
+      weatherConditions = response.days[0].conditions;
       console.log(
         "results:",
         resolvedAddress,
@@ -36,7 +37,8 @@ async function getApi(location) {
         rainProbality,
         humidity,
         windSpeed,
-        DateOf
+        dateOf,
+        epochTime
       );
 
       renderAPi(
@@ -47,7 +49,8 @@ async function getApi(location) {
         rainProbality,
         humidity,
         windSpeed,
-        DateOf
+        dateOf,
+        epochTime
       );
     })
     .catch(function (error) {
@@ -63,7 +66,8 @@ function renderAPi(
   rainProbality,
   humidity,
   windSpeed,
-  DateOf
+  dateOf,
+  epochTime
 ) {
   const LocationAdressDom = document.querySelector(".address");
   const DateDom = document.querySelector("time");
