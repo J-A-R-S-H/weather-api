@@ -73,6 +73,7 @@ function renderAPi(
   const dateDom = document.querySelector("time");
   const epochTimeDom = document.querySelector("#epoch-time");
   const currentTempatureDom = document.querySelector("#current-temp");
+  const minmaxTempatureDom = document.querySelector(".minmax-tempature");
 
   let reformedDate = formatDate(dateOf);
   let reformedEpochDate = convertEpochTo24Hour(epochTime);
@@ -81,6 +82,7 @@ function renderAPi(
   dateDom.textContent = reformedDate;
   epochTimeDom.textContent = reformedEpochDate;
   currentTempatureDom.textContent = `${tempature}°c`;
+  minmaxTempatureDom.textContent = `${minTempature}°c / ${maxTempature}°c`;
 }
 
 function formatDate(dateStr) {
