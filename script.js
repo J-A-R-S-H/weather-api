@@ -1,5 +1,6 @@
 const locationForm = document.querySelector("#location-form");
 const searchBoxLocation = document.querySelector("#search-box");
+const weatherSection = document.querySelector("#future-weather");
 
 locationForm.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -119,5 +120,7 @@ function convertEpochTo24Hour(epoch, useUTC = false) {
 
   return `${hours}:${minutes}`;
 }
+
+weatherSection.innerHTML;
 
 getApi("Vancouver, British Colombia");
