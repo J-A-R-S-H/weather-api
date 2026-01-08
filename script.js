@@ -22,7 +22,7 @@ async function getApi(location) {
       tempature = response.currentConditions.temp;
       maxTempature = response.days[0].tempmax;
       minTempature = response.days[0].tempmin;
-      rainProbality = response.currentConditions.precipprob;
+      rainProbality = response.days[0].precipprob;
       humidity = response.currentConditions.humidity;
       windSpeed = response.currentConditions.windspeed;
       dateOf = response.days[0].datetime;
@@ -85,6 +85,7 @@ function renderAPi(
   let reformedDate = formatDate(dateOf);
   let reformedEpochDate = convertEpochTo24Hour(epochTime);
 
+  console.log(resolvedAddress, "check");
   locationAdressDom.textContent = resolvedAddress;
   dateDom.textContent = reformedDate;
   epochTimeDom.textContent = reformedEpochDate;
@@ -118,3 +119,5 @@ function convertEpochTo24Hour(epoch, useUTC = false) {
 
   return `${hours}:${minutes}`;
 }
+
+getApi("Vancouver, British Colombia");
