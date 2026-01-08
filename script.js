@@ -29,6 +29,8 @@ async function getApi(location) {
       dateOf = response.days[0].datetime;
       epochTime = response.currentConditions.datetimeEpoch;
       weatherConditions = response.currentConditions.conditions;
+      futureDay = response.days;
+
       console.log(
         "results:",
         resolvedAddress,
@@ -96,6 +98,22 @@ function renderAPi(
   rainPercentageDom.textContent = `${rainProbality}%`;
   windSpeedDom.textContent = `${windSpeed}km/h`;
   humidityDom.textContent = `${humidity}%`;
+
+  let outputCards = "";
+
+  for (let i = 1; i < 5; i++) {
+    outputCards += `<li class="card-weather-day">
+    <span class="day">${formatDateDay(futureDay[i].datetime)}</span>
+
+<span>Cloudy</span>
+<span>${futureDay[i].temp}°c</span>
+</li>
+`;
+    console.log(i, "test");
+    console.log(outputCards, "test");
+  }
+
+  weatherSection.innerHTML = outputCards;
 }
 
 function formatDate(dateStr) {
@@ -104,6 +122,13 @@ function formatDate(dateStr) {
     year: "numeric",
     month: "long",
     day: "numeric",
+  };
+  return new Date(dateStr).toLocaleDateString("en-US", options);
+}
+
+function formatDateDay(dateStr) {
+  const options = {
+    weekday: "long",
   };
   return new Date(dateStr).toLocaleDateString("en-US", options);
 }
@@ -120,7 +145,5 @@ function convertEpochTo24Hour(epoch, useUTC = false) {
 
   return `${hours}:${minutes}`;
 }
-
-weatherSection.innerHTML;
 
 getApi("Vancouver, British Colombia");

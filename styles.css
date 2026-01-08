@@ -178,8 +178,26 @@ margin-bottom: 1rem;}
         margin-right: 0.2rem;
     }
 
+    #future-weather {
+      margin-top: 1rem;
+      display: flex;
+      justify-content: space-between;
+     gap:  0.7rem;
+     background-color: var(--background--color--box);
+border-radius: 0.5rem;
+padding: 1rem;    }
+.card-weather-day {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+width: fit-content;
+border-radius: 0.5rem;
+}
 
-
+.card-weather-day .day { 
+  color: #d3d3d3d3;
+}
   
 @media (min-width: 750px) {
     body {
