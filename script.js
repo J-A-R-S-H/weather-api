@@ -105,12 +105,9 @@ function renderAPi(
     outputCards += `<li class="card-weather-day">
     <span class="day">${formatDateDay(futureDay[i].datetime)}</span>
 
-<span>Cloudy</span>
-<span>${futureDay[i].temp}°c</span>
+<span class='card-tempature'>${futureDay[i].temp}°c</span>
 </li>
 `;
-    console.log(i, "test");
-    console.log(outputCards, "test");
   }
 
   weatherSection.innerHTML = outputCards;

@@ -186,6 +186,8 @@ margin-bottom: 1rem;}
      background-color: var(--background--color--box);
 border-radius: 0.5rem;
 padding: 1rem;    }
+
+
 .card-weather-day {
 display: flex;
 flex-direction: column;
@@ -193,6 +195,11 @@ justify-content: center;
 align-items: center;
 width: fit-content;
 border-radius: 0.5rem;
+}
+
+.card-tempature { 
+  color: #fafafa;
+  font-weight: 700;
 }
 
 .card-weather-day .day { 
